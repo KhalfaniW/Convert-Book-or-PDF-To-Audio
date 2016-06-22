@@ -12,7 +12,22 @@ pip (to install the python addons)
 python: selenium,
 pdftohtml, 
 tesseract-ocr, 
-glob,
+datetime,
 and Python Image Library (PIL) 
+commands,#deprected in python3 (only used for one method)
+python2 so you can run commands
 
-I am assuming you already have glob and Python Image Library (PIL) 
+
+I am assuming you already have glob
+
+To get the rest run these commands:
+sudo apt-get install python-pip
+sudo apt-get install pdftohtml
+sudo apt-get install tesseract-ocr
+sudo pip install selenium
+sudo pip install datetime
+sudo apt-get install python-PIL
+
+
+
+Execution
