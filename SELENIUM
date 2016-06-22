@@ -62,7 +62,7 @@ def convert_to_audio(file_,voice_name):
     
 threads = []   
 
-#This methods below will convert the text file into multiple voices: the result is more versitle but is Significantly longer 
+#The methods below will convert the text file into multiple voices: the result is more versitle but is Significantly longer 
 #I would recommend finding one voice you prefer and only converting the text into that voice
 for text_file in glob.glob(os.path.join(path, '*.txt')):
     convert_to_audio(text_file,"Alice")
