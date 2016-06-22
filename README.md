@@ -12,7 +12,7 @@ pip (to install the python addons)
 python: selenium,
 pdftohtml, 
 tesseract-ocr, 
-datetime, z
+datetime, 
 and Python Image Library (PIL) 
 commands,#deprected in python3 (only used for one method)
 python2 so you can run commands
