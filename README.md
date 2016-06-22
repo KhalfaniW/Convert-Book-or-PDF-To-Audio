@@ -34,8 +34,8 @@ sudo pip install daudiotetime
 
 #####EXECUTION
 
-1. Put pdf into folder
-2. add "Do all.py" file into folder and run the file in the terminal
-3. wait...  "text_files" folder should be created after "Do all.py" finishes
-4. move SELENIUM into that folder and execute
+1. Put your pdf,.jpgs or scanned copy of book as Pdf into a folder
+2. Add "Do all.py" file to that folder and run the file in the terminal
+3. Wait...  "text_files" folder should be created after "Do all.py" finishes
+4. move SELENIUM.py into the text_files folder that will be created and execute
 5. text_files folder should now have mp3 files
