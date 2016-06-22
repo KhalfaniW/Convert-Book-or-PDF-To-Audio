@@ -21,14 +21,14 @@ In preperation you will need to install the following:
 I am assuming you already have glob
 
 To get the rest run these commands:
-
-* sudo apt-get install python-pip
-* sudo apt-get install python-PIL
-* sudo apt-get install pdftohtml
-* sudo apt-get install tesseract-ocr
-* sudo pip install selenium
-* sudo pip install daudiotetime
-
+'''
+sudo apt-get install python-pip
+sudo apt-get install python-PIL
+sudo apt-get install pdftohtml
+sudo apt-get install tesseract-ocr
+sudo pip install selenium
+sudo pip install daudiotetime
+'''
 
 
 
