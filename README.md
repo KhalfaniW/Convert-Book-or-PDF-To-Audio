@@ -1,4 +1,4 @@
-# Convert-Book-Or-PDF-To-Audio
+# Convert-Book-or-PDF-To-Audio
 *This is a collections tool I made to join free services such as tesseract and fromtexttospeech.com to convert a scanned pdf to audio*
 
 This requires linux opperating system, i am unsure if it will work on any other operating system but it may be available on Mac.
