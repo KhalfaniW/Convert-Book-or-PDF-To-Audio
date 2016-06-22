@@ -21,13 +21,21 @@ python2 so you can run commands
 I am assuming you already have glob
 
 To get the rest run these commands:
+
 sudo apt-get install python-pip
+sudo apt-get install python-PIL
 sudo apt-get install pdftohtml
 sudo apt-get install tesseract-ocr
 sudo pip install selenium
 sudo pip install datetime
-sudo apt-get install python-PIL
+
 
 
 
 Execution
+
+1. Put pdf into folder
+2. add "Do all.py" file into folder and run the file in the terminal
+3. wait...  "text_files" folder should be created after "Do all.py" finishes
+4. move SELENIUM into that folder and execute
+5. text_files folder should now have mp3 files
