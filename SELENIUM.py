@@ -17,6 +17,7 @@ path = os.getcwd()
 def convert_to_audio(file_,voice_name):
     driver = webdriver.PhantomJS()
     driver.get('http://www.fromtexttospeech.com/')
+    #wait for it to open
     driver.implicitly_wait(10)
     print(voice_name+" textfile file open")
     f=open(file_)
@@ -29,11 +30,12 @@ def convert_to_audio(file_,voice_name):
             "George":2,
             "Jenna":3,
             "John":4}
-    #execute
+    #select the voice chosen when this was called
     driver.execute_script('document.getElementById("voice").selectedIndex=%d;' %voice[voice_name])    
     driver.find_element_by_id("create_audio_file").click();
     print("trying to join file")
     try:
+        #wait until it crates an mp3
         element = WebDriverWait(driver, 1e10).until(
             EC.presence_of_element_located((By.ID, "single1"))
         )
@@ -45,17 +47,21 @@ def convert_to_audio(file_,voice_name):
             {
                 for(i=0; i<document.getElementsByTagName("a").length;i++)
                 {
-                    if(document.getElementsByTagName("a")[i].innerHTML.indexOf("Download audio file")>-1)
-                        document.getElementById("single1").link=document.getElementsByTagName("a")[i].href;//made up attribute
+                    if(document.getElementsByTagName("a")[i].innerHTML.indexOf("Download audio file")>-1)//if it is finnihed
+                     //."link" is a made up attribute that so i can store the href for later extraction
+                        document.getElementById("single1").link=document.getElementsByTagName("a")[i].href;
+                    
                 }
-
+ 
             }
         ''')
         print("trying to download")
+        #get value of link from attribute i made up
         el=driver.find_element_by_id("single1")
         link=el.get_attribute("link")
         print("downloading %s from %s" %(file_.split("/")[-1], link))
         print(strftime("%Y-%m-%d %H:%M:%S"))
+        #download it! : D
         urllib.urlretrieve(link, filename=file_.replace(".txt","")+"."+voice_name+".mp3")
         driver.close()
           
