@@ -2,7 +2,7 @@
 from PIL import Image
 import os
 import glob
-import commands #Deprecated in Py3: use subprocess instead. (subprocess isn't working for me, maybe it works in Py3)
+import commands #Deprecated in Python3: use subprocess instead. (subprocess isn't working for me, maybe it works in Py3)
 import subprocess
 
 path = os.getcwd()
@@ -13,7 +13,7 @@ try:
 except OSError:
     if not os.path.isdir(text_file_path):
         raise
-#split pdfs into readable images using tesseract 
+#split pdfs into readable images for tesseract 
 for file_ in glob.glob(os.path.join(path, '*.pdf')):
 		subprocess.call(["pdftohtml", "-xml", file_])
 #delete non-image output of pdfthtml		
@@ -26,10 +26,11 @@ for file_ in glob.glob(os.path.join(path, '*.jpg')):
 	try:
 		im = Image.open(file_) 
 		x=im.size[0]/2 #get middle of image
-		y=im.size[1]-1 #hieght
+		y=im.size[1]-1 #height
 		pix = im.load()
 		
 		#find where page starts from bottom up to crop out unnesseracy parts
+		#it starts where the white part of the page starts
 		while pix[x,y] != (255, 255, 255) and y != 0:
 			y-=1
 
@@ -46,7 +47,7 @@ for file_ in glob.glob(os.path.join(path, '*.jpg')):
 	 	textfilename= file_.replace(".jpg","").split("/")[-1]
 		subprocess.call(["tesseract", file_ , text_file_path+"/"+textfilename])
 	except:
-	
+		#log errors
 		print("Error On File: "+file_+"!")
 		f = open(path+"/ErrorLog","a")
 		f.write("Error On File: "+file_+"! \n")
