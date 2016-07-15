@@ -1,19 +1,19 @@
 # Convert-Book-or-PDF-To-Audio
 *This is a collections tool I made to join free services such as tesseract and fromtexttospeech.com to convert a scanned pdf to audio*
 
-This requires linux opperating system, i am unsure if it will work on any other operating system but it may be available on Mac.
+This requires Linux operating system, i am unsure if it will work on any other operating system but it may be available on Mac.
 
 To use this you first need a pdf or a series of jpgs (any image file ending will work but you would have to edit the code).
 
-#####PREPERATION
+#####PREPARATION
 
-In preperation you will need to install the following: 
+In preparation you will need to install the following:
 - pip (to install the python addons)
 - python: selenium,
-- pdftohtml, 
-- tesseract-ocr, 
-- datetime, 
-- Python Image Library (PIL) 
+- pdftohtml,
+- tesseract-ocr,
+- datetime,
+- Python Image Library (PIL)
 - commands, *deprected in python3 (only used for one method)*
 - python2 so you can run commands
 
